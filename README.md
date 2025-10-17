@@ -83,30 +83,12 @@ $ ghci -i="lib" -i="Test" Test/Spec.hs
 $ runhaskell -i="lib" -i="Test" Test/Spec.hs
 ```
 
-## Documentation
-
-You can generate Haddock documentation with:
-
-1. Using `cabal`
-
-```bash
-$ cabal haddock --haddock-all
-```
-
-2. Using `haddock` directly
-
-```bash
-$ haddock -h -o doc/html src/*.hs lib/*.hs
-```
-
 ## Game controls (example)
 
 - Left / Right arrows — move the player
 - Space bar — jump
 - Attack key (e.g., H) — use hammer/attack (if implemented)
 - Esc — pause / return to menu
-
-(If you want, I can update this section with the exact controls used in the code.)
 
 ## Assets (images & sounds)
 
