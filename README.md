@@ -1,43 +1,131 @@
-# Laboratórios de Informática I
+# Donkey Kong (Clone) — Laboratory of Informatics I (LI1)
 
-## Executável
+![Donkey Kong (logo)](imagens/Menus/menuMapas1.png)
 
-Pode compilar e executar o programa através dos comandos `build` e `run` do `cabal`.
+Clone of the Donkey Kong game implemented in Haskell, using the Gloss library for rendering and input. Developed as a project for the Laboratory of Informatics I (LI1) course, part of the first-year curriculum of the Software Engineering degree at the University of Minho.
 
-```bash
-cabal run primate-kong
-```
+The repository contains the game implementation as well as the coursework tasks and unit tests associated with the course assignments.
 
-## Interpretador
+This project obtained a final grade of 17/20.
 
-Pode abrir o interpretador do Haskell (GHCi) utilizando o cabal com o projecto automaticamente carregado.
+![Game snapshot](imagens/Jogador/marioD.png)
 
-```bash
-cabal repl
-```
+## Repository structure
 
-## Testes
+- `src/` — Main game code (e.g., `Main.hs`).
+- `lib/` — Implementations of the course tasks and helper modules.
+- `imagens/` — Graphic assets: blocks, enemies, player, menus, collectibles.
+- `Test/` — Unit tests (specs) used to validate the tasks.
+- `primate-kong.cabal` — Cabal package description file.
 
-O projecto utiliza a biblioteca [HUnit](https://hackage.haskell.org/package/HUnit) para fazer testes unitários.
+> Note: I assumed the main author of the repository is the local user (Afonso Martins). If you want to add other authors or the group number, tell me and I will update it.
 
-Pode correr os testes utilizando o seguinte comando.
+## Requirements
 
-```bash
-cabal test
-```
+- GHC (Glasgow Haskell Compiler)
+- Cabal (recommended to manage dependencies and run the project)
+- Gloss library
+- HUnit (included if needed for tests)
 
-Se pretender executar os exemplos da documentação como testes unitários utiliza-se a biblioteca [Doctest](https://hackage.haskell.org/package/doctest).
+## Open the interpreter (GHCi)
 
-```bash
-cabal repl --build-depends=QuickCheck,doctest --with-ghc=doctest
-```
+You can open the Haskell interpreter using `cabal` or directly with `ghci`.
 
-## Documentação
-
-Pode gerar a documentação com o [Haddock](https://haskell-haddock.readthedocs.io/).
+1. Using `cabal`
 
 ```bash
-cabal haddock
+$ cabal repl
 ```
-# Donkey-Kong-LI1
-# Donkey-Kong-LI1
+
+2. Using `ghci` directly (load `src`):
+
+```bash
+$ ghci -i="src" -i="lib" src/Main.hs
+```
+
+## Run the game
+
+If the project is configured with `cabal` you can build and run it with:
+
+```bash
+$ cabal build
+$ cabal run
+```
+
+Or, for quick testing without building, you can use `ghci` and call the `main` function from the interpreter:
+
+```bash
+# inside ghci
+> main
+```
+
+## Tests
+
+Unit tests use HUnit (or a small custom test framework in the `Spec`s). You have several alternatives to run them:
+
+1. Using `cabal`
+
+```bash
+$ cabal test
+```
+
+2. Using `ghci` to load the specs manually
+
+```bash
+$ ghci -i="lib" -i="Test" Test/Spec.hs
+# inside ghci run the exposed test functions, for example:
+# >>> runTestsT1
+# >>> runTestsT2
+# >>> main  -- if there is a top-level main that runs all tests
+```
+
+3. Using `runhaskell` to run a spec directly
+
+```bash
+$ runhaskell -i="lib" -i="Test" Test/Spec.hs
+```
+
+## Documentation
+
+You can generate Haddock documentation with:
+
+1. Using `cabal`
+
+```bash
+$ cabal haddock --haddock-all
+```
+
+2. Using `haddock` directly
+
+```bash
+$ haddock -h -o doc/html src/*.hs lib/*.hs
+```
+
+## Game controls (example)
+
+- Left / Right arrows — move the player
+- Space bar — jump
+- Attack key (e.g., H) — use hammer/attack (if implemented)
+- Esc — pause / return to menu
+
+(If you want, I can update this section with the exact controls used in the code.)
+
+## Assets (images & sounds)
+
+All graphic resources are located in the `imagens/` folder with subfolders for blocks, enemies, player, menus, and collectibles. Keep the files in this structure so the game's relative paths continue to work.
+
+## Development notes
+
+- The code is organized into modules to help complete the course tasks.
+- It is recommended to use `cabal repl` during development to quickly reload modules.
+- If you modify assets (images), make sure the paths referenced in the code remain correct.
+
+## Group / Author
+
+- Afonso Martins — https://github.com/AfonsoMartins26
+
+If there are more group members, tell me their names and I will add them here.
+
+## License
+
+This repository was developed as academic coursework. Feel free to reuse or study the code, but please attribute the original source.
