@@ -18,8 +18,6 @@ This project obtained a final grade of 17/20.
 - `Test/` — Unit tests (specs) used to validate the tasks.
 - `primate-kong.cabal` — Cabal package description file.
 
-> Note: I assumed the main author of the repository is the local user (Afonso Martins). If you want to add other authors or the group number, tell me and I will update it.
-
 ## Requirements
 
 - GHC (Glasgow Haskell Compiler)
@@ -124,6 +122,7 @@ All graphic resources are located in the `imagens/` folder with subfolders for b
 
 - Afonso Martins — https://github.com/AfonsoMartins26
 
+- Salomé Faria -- https://github.com/faria-s 
 If there are more group members, tell me their names and I will add them here.
 
 ## License
