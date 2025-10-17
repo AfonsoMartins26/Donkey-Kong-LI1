@@ -122,8 +122,7 @@ All graphic resources are located in the `imagens/` folder with subfolders for b
 
 - Afonso Martins — https://github.com/AfonsoMartins26
 
-- Salomé Faria -- https://github.com/faria-s 
-If there are more group members, tell me their names and I will add them here.
+- Salomé Faria — https://github.com/faria-s 
 
 ## License
 
